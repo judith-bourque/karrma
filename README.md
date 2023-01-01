@@ -18,18 +18,33 @@ You can install the development version of karrma from
 devtools::install_github("judith-bourque/karrma")
 ```
 
+``` r
+library("karrma")
+```
+
 ## Prerequisites
 
 ``` r
-install.packages('spotifyr')
+install.packages("spotifyr")
 ```
 
-## Setup Spotify API access token in Renviron
+Setup Spotify API access token in Renviron:
 
 ``` r
 usethis::edit_r_environ()
 
 # Insert in Renviron
-SPOTIFY_CLIENT_ID = 'xxxxxxxxxxxxxxxxxxxxx'
-SPOTIFY_CLIENT_SECRET = 'xxxxxxxxxxxxxxxxxxxxx'
+SPOTIFY_CLIENT_ID = "xxxxxxxxxxxxxxxxxxxxx"
+SPOTIFY_CLIENT_SECRET = "xxxxxxxxxxxxxxxxxxxxx"
+```
+
+## Examples
+
+``` r
+get_spotify()
+#> # A tibble: 2 × 3
+#>   name         followers popularity
+#>   <chr>            <int>      <int>
+#> 1 Taylor Swift  65082132         99
+#> 2 Kanye West    19022825         91
 ```

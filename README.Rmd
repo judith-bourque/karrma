@@ -24,24 +24,34 @@ The goal of karrma is to ...
 
 You can install the development version of karrma from [GitHub](https://github.com/) with:
 
-``` r
+```{r eval = FALSE}
 # install.packages("devtools")
 devtools::install_github("judith-bourque/karrma")
+```
+
+```{r}
+library("karrma")
 ```
 
 ## Prerequisites
 
 ```{r eval = FALSE}
-install.packages('spotifyr')
+install.packages("spotifyr")
 ```
 
-## Setup Spotify API access token in Renviron
+Setup Spotify API access token in Renviron:
 
 ```{r eval = FALSE}
 usethis::edit_r_environ()
 
 # Insert in Renviron
-SPOTIFY_CLIENT_ID = 'xxxxxxxxxxxxxxxxxxxxx'
-SPOTIFY_CLIENT_SECRET = 'xxxxxxxxxxxxxxxxxxxxx'
+SPOTIFY_CLIENT_ID = "xxxxxxxxxxxxxxxxxxxxx"
+SPOTIFY_CLIENT_SECRET = "xxxxxxxxxxxxxxxxxxxxx"
+```
+
+## Examples
+
+```{r}
+get_spotify()
 ```
 
