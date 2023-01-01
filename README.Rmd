@@ -53,5 +53,7 @@ SPOTIFY_CLIENT_SECRET = "xxxxxxxxxxxxxxxxxxxxx"
 
 ```{r}
 get_spotify()
+
+get_pageviews_raw()
 ```
 
