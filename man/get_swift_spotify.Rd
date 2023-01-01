@@ -2,7 +2,7 @@
 % Please edit documentation in R/spotify.R
 \name{get_swift_spotify}
 \alias{get_swift_spotify}
-\title{Get Spotify data for Taylor Swift}
+\title{Get Spotify data for Taylor Swift and Kanye West}
 \usage{
 get_swift_spotify()
 }
@@ -10,8 +10,9 @@ get_swift_spotify()
 List object.
 }
 \description{
-Get Spotify data for Taylor Swift
+Get Spotify data for Taylor Swift and Kanye West
 }
 \examples{
 data <- get_swift_spotify()
+data <- get_west_spotify()
 }
