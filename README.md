@@ -22,11 +22,14 @@ devtools::install_github("judith-bourque/karrma")
 
 ``` r
 install.packages('spotifyr')
+```
 
-# Create Spotify API access token
+## Setup Spotify API access token in Renviron
 
-Sys.setenv(SPOTIFY_CLIENT_ID = 'xxxxxxxxxxxxxxxxxxxxx')
-Sys.setenv(SPOTIFY_CLIENT_SECRET = 'xxxxxxxxxxxxxxxxxxxxx')
+``` r
+usethis::edit_r_environ()
 
-access_token <- get_spotify_access_token()
+# Insert in Renviron
+SPOTIFY_CLIENT_ID = 'xxxxxxxxxxxxxxxxxxxxx'
+SPOTIFY_CLIENT_SECRET = 'xxxxxxxxxxxxxxxxxxxxx'
 ```
