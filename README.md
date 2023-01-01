@@ -48,7 +48,7 @@ get_spotify()
 #> 1 Taylor Swift  65082132         99
 #> 2 Kanye West    19022825         91
 
-get_pageviews_raw()
+get_pageviews_raw(granularity = "monthly")
 #>     project language      article     access agent granularity       date
 #> 1 wikipedia       en Taylor_Swift all-access  user     monthly 2022-12-01
 #> 2 wikipedia       en   Kanye_West all-access  user     monthly 2022-12-01
