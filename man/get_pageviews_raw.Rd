@@ -8,11 +8,11 @@ get_pageviews_raw(
   project = "en.wikipedia",
   article = c("Taylor Swift", "Kanye West"),
   platform = "all",
-  user_type = "user",
+  user_type = "all",
   start = get_last_month(),
   end = NULL,
   reformat = TRUE,
-  granularity = "monthly"
+  granularity = "daily"
 )
 }
 \arguments{
