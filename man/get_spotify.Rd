@@ -2,17 +2,15 @@
 % Please edit documentation in R/spotify.R
 \name{get_spotify}
 \alias{get_spotify}
-\title{Get Spotify data for Taylor Swift and Kanye West}
+\title{Get Spotify data for Taylor Swift and Kanye West in tidy format}
 \usage{
 get_spotify()
 }
 \value{
-List object.
-
 tibble
 }
 \description{
-Get Spotify data for Taylor Swift and Kanye West
+Get Spotify data for Taylor Swift and Kanye West in tidy format
 }
 \examples{
 data <- get_spotify()

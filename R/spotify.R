@@ -1,6 +1,4 @@
-#' Get Spotify data for Taylor Swift and Kanye West
-#'
-#' @return List object.
+#' Get Spotify data for Taylor Swift and Kanye West in tidy format
 #'
 #' @examples
 #' data <- get_spotify()
@@ -25,10 +23,22 @@ get_spotify <- function() {
   rbind(swift_tb, west_tb)
 }
 
+#' Get Spotify data for Taylor Swift and Kanye West
+#'
+#' Functions intented for backend only.
+#'
+#' @return List object.
+#' @examples
+#' data <- get_swift_spotify()
+#' data <- get_west_spotify()
+
+#' @export
+#' @rdname spotify_backend
 get_swift_spotify <- function() {
   spotifyr::get_artist("06HL4z0CvFAxyc27GXpf02?si=_y8VtBWVQ-uiuaOF5tJphw", authorization = spotifyr::get_spotify_access_token())
 }
-
+#' @export
+#' @rdname spotify_backend
 get_west_spotify <- function() {
   spotifyr::get_artist("5K4W6rqBFWDnAN6FQUkS6x?si=1porkVNwRaeBFt-Q0WGHQw", authorization = spotifyr::get_spotify_access_token())
 }
