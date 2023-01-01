@@ -14,4 +14,10 @@ Get Spotify data for Taylor Swift and Kanye West in tidy format
 }
 \examples{
 data <- get_spotify()
+
 }
+\seealso{
+Other spotify: 
+\code{\link{get_swift_spotify}()}
+}
+\concept{spotify}

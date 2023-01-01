@@ -1,10 +1,11 @@
 #' Get Spotify data for Taylor Swift and Kanye West in tidy format
 #'
+#' @return tibble
 #' @examples
 #' data <- get_spotify()
-
-#' @return tibble
+#'
 #' @export
+#' @family spotify
 get_spotify <- function() {
   swift_list <- get_swift_spotify()
 
@@ -28,6 +29,7 @@ get_spotify <- function() {
 #' Functions intented for backend only.
 #'
 #' @return List object.
+#' @family spotify
 #' @examples
 #' data <- get_swift_spotify()
 #' data <- get_west_spotify()

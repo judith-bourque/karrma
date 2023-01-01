@@ -19,3 +19,8 @@ Functions intented for backend only.
 data <- get_swift_spotify()
 data <- get_west_spotify()
 }
+\seealso{
+Other spotify: 
+\code{\link{get_spotify}()}
+}
+\concept{spotify}
