@@ -11,7 +11,7 @@ get_pageviews_raw <- function(project = "en.wikipedia",
            article = c("Taylor Swift", "Kanye West"),
            platform = "all",
            user_type = "user",
-           start = "2022120100",
+           start = get_last_month(),
            end = NULL,
            reformat = TRUE,
            granularity = "monthly") {
@@ -26,3 +26,14 @@ get_pageviews_raw <- function(project = "en.wikipedia",
       granularity = granularity
     )
   }
+
+#' Get first day of last month for pageviews functions
+#'
+#' @return a character vector containing timestamps that can be used with pageviews package.
+#' @export
+#'
+#' @examples
+#' get_last_month()
+get_last_month <- function(){
+  pageviews::pageview_timestamps(timestamps = lubridate::floor_date(Sys.Date() - months(1), "month"))
+}
