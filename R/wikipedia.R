@@ -43,7 +43,10 @@ visualize_pageviews <- function() {
     ggplot2::geom_col() +
     ggplot2::labs(
       title = "Wikipedia Pageviews"
-    )
+    ) +
+    ggplot2::ylab("") +
+    ggplot2::scale_y_continuous(labels = scales::comma) +
+    ggplot2::theme_minimal()
 }
 
 #' Get first day of last month for pageviews functions
