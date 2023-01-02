@@ -17,5 +17,6 @@ Imports:
     tibble
 Suggests: 
     ggplot2,
+    gt,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
