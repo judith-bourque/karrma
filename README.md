@@ -60,10 +60,10 @@ get_spotify()
 #> 2 Kanye West    19029813         91
 
 visualize_spotify() %>% 
-  gt::gtsave("visualize_spotify.png", expand = 10)
+  gt::gtsave("man/figures/visualize_spotify.png", expand = 10)
 ```
 
-![alt text here](visualize_spotify.png)
+![alt text here](man/figures/visualize_spotify.png)
 
 ### Compare Wikipedia data
 
