@@ -20,6 +20,15 @@ devtools::install_github("judith-bourque/karrma")
 
 ``` r
 library("karrma")
+library("dplyr")
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
 ```
 
 ## Prerequisites
@@ -40,19 +49,34 @@ SPOTIFY_CLIENT_SECRET = "xxxxxxxxxxxxxxxxxxxxx"
 
 ## Examples
 
+### Compare Spotify data
+
 ``` r
 get_spotify()
 #> # A tibble: 2 × 3
 #>   name         followers popularity
 #>   <chr>            <int>      <int>
-#> 1 Taylor Swift  65082132         99
-#> 2 Kanye West    19022825         91
+#> 1 Taylor Swift  65139572         99
+#> 2 Kanye West    19029813         91
 
-get_pageviews_raw(granularity = "monthly")
-#>     project language      article     access agent granularity       date
-#> 1 wikipedia       en Taylor_Swift all-access  user     monthly 2022-12-01
-#> 2 wikipedia       en   Kanye_West all-access  user     monthly 2022-12-01
-#>     views
-#> 1  827599
-#> 2 1183478
+visualize_spotify() %>% 
+  gt::gtsave("visualize_spotify.png", expand = 10)
 ```
+
+![alt text here](visualize_spotify.png)
+
+### Compare Wikipedia data
+
+``` r
+get_pageviews_raw(granularity = "monthly")
+#>     project language      article     access      agent granularity       date
+#> 1 wikipedia       en Taylor_Swift all-access all-agents     monthly 2022-12-01
+#> 2 wikipedia       en   Kanye_West all-access all-agents     monthly 2022-12-01
+#>     views
+#> 1  880978
+#> 2 1257622
+
+visualize_pageviews()
+```
+
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
