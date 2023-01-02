@@ -21,5 +21,6 @@ Imports:
 Suggests: 
     ggplot2,
     gt,
+    httptest,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
