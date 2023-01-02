@@ -12,7 +12,7 @@ get_pageviews_raw(
   start = get_last_month(),
   end = NULL,
   reformat = TRUE,
-  granularity = "daily"
+  granularity = "monthly"
 )
 }
 \arguments{

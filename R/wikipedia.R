@@ -14,7 +14,7 @@ get_pageviews_raw <- function(project = "en.wikipedia",
            start = get_last_month(),
            end = NULL,
            reformat = TRUE,
-           granularity = "daily") {
+           granularity = "monthly") {
     pageviews::article_pageviews(
       project = project,
       article = article,
@@ -27,6 +27,26 @@ get_pageviews_raw <- function(project = "en.wikipedia",
     )
   }
 
+#' Visualize Wikipedia pageviews for Taylor Swift and Kanye West
+#'
+#' @return ggplot
+#' @export
+#'
+#' @examples
+#' visualize_pageviews()
+visualize_pageviews <- function() {
+  article <- views <- NULL # Setting the variables to NULL first
+
+  data <- get_pageviews_raw()
+
+  ggplot2::ggplot(data, ggplot2::aes(x = article, y = views)) +
+    ggplot2::geom_col() +
+    ggplot2::labs(
+      title = "Wikipedia Pageviews"
+    )
+}
+
+
 #' Get first day of last month for pageviews functions
 #'
 #' @return a character vector containing timestamps that can be used with pageviews package.
@@ -37,3 +57,4 @@ get_pageviews_raw <- function(project = "en.wikipedia",
 get_last_month <- function(){
   pageviews::pageview_timestamps(timestamps = lubridate::floor_date(Sys.Date() - months(1), "month"))
 }
+
