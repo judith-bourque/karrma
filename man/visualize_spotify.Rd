@@ -10,7 +10,7 @@ visualize_spotify()
 gt table
 }
 \description{
-Visualize Spotify data for Taylor Swift and Kanye West
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }
 \examples{
 visualize_spotify()

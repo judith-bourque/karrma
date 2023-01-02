@@ -42,7 +42,7 @@ whether pageview data should reflect trends in days or months.}
 data.frame
 }
 \description{
-Get Wikipedia pageviews
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }
 \examples{
 data <- get_pageviews_raw()

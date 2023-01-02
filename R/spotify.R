@@ -1,5 +1,7 @@
 #' Get Spotify data for Taylor Swift and Kanye West in tidy format
 #'
+#' `r lifecycle::badge('experimental')`
+#'
 #' @return tibble
 #' @examples
 #' data <- get_spotify()
@@ -26,6 +28,8 @@ get_spotify <- function() {
 
 #' Get Spotify data for Taylor Swift and Kanye West
 #'
+#' `r lifecycle::badge('experimental')`
+#'
 #' Functions intented for backend only.
 #'
 #' @return List object.
@@ -46,6 +50,8 @@ get_west_spotify <- function() {
 }
 
 #' Visualize Spotify data for Taylor Swift and Kanye West
+#'
+#' `r lifecycle::badge('experimental')`
 #'
 #' @return gt table
 #' @export

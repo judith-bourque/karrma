@@ -1,5 +1,7 @@
 #' Get Wikipedia pageviews
 #'
+#' `r lifecycle::badge('experimental')`
+#'
 #' @inheritParams pageviews::article_pageviews
 #'
 #' @return data.frame
@@ -29,6 +31,8 @@ get_pageviews_raw <- function(project = "en.wikipedia",
 
 #' Visualize Wikipedia pageviews for Taylor Swift and Kanye West
 #'
+#' `r lifecycle::badge('experimental')`
+#'
 #' @return ggplot
 #' @export
 #'
@@ -50,6 +54,8 @@ visualize_pageviews <- function() {
 }
 
 #' Get first day of last month for pageviews functions
+#'
+#' `r lifecycle::badge('experimental')`
 #'
 #' @return a character vector containing timestamps that can be used with pageviews package.
 #' @export

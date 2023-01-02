@@ -10,7 +10,7 @@ get_spotify()
 tibble
 }
 \description{
-Get Spotify data for Taylor Swift and Kanye West in tidy format
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }
 \examples{
 data <- get_spotify()

@@ -10,7 +10,7 @@ get_last_month()
 a character vector containing timestamps that can be used with pageviews package.
 }
 \description{
-Get first day of last month for pageviews functions
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }
 \examples{
 get_last_month()
