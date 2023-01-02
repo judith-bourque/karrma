@@ -11,8 +11,8 @@ get_pageviews_raw <- function(project = "en.wikipedia",
            article = c("Taylor Swift", "Kanye West"),
            platform = "all",
            user_type = "all",
-           start = get_last_month(),
-           end = NULL,
+           start = "2015100100",
+           end = "2022120100",
            reformat = TRUE,
            granularity = "monthly") {
     pageviews::article_pageviews(
@@ -45,7 +45,6 @@ visualize_pageviews <- function() {
       title = "Wikipedia Pageviews"
     )
 }
-
 
 #' Get first day of last month for pageviews functions
 #'

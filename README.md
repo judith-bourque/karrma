@@ -69,13 +69,22 @@ visualize_spotify() %>%
 ### Compare Wikipedia data
 
 ``` r
-get_pageviews_raw(granularity = "monthly")
+get_pageviews_raw(granularity = "monthly") %>% 
+  head()
 #>     project language      article     access      agent granularity       date
-#> 1 wikipedia       en Taylor_Swift all-access all-agents     monthly 2022-12-01
-#> 2 wikipedia       en   Kanye_West all-access all-agents     monthly 2022-12-01
-#>     views
-#> 1  880978
-#> 2 1257622
+#> 1 wikipedia       en Taylor_Swift all-access all-agents     monthly 2015-10-01
+#> 2 wikipedia       en Taylor_Swift all-access all-agents     monthly 2015-11-01
+#> 3 wikipedia       en Taylor_Swift all-access all-agents     monthly 2015-12-01
+#> 4 wikipedia       en Taylor_Swift all-access all-agents     monthly 2016-01-01
+#> 5 wikipedia       en Taylor_Swift all-access all-agents     monthly 2016-02-01
+#> 6 wikipedia       en Taylor_Swift all-access all-agents     monthly 2016-03-01
+#>    views
+#> 1 736505
+#> 2 657281
+#> 3 719577
+#> 4 623515
+#> 5 875317
+#> 6 552923
 
 visualize_pageviews()
 ```

@@ -66,7 +66,8 @@ visualize_spotify() %>%
 ### Compare Wikipedia data
 
 ```{r}
-get_pageviews_raw(granularity = "monthly")
+get_pageviews_raw(granularity = "monthly") %>% 
+  head()
 
 visualize_pageviews()
 ```

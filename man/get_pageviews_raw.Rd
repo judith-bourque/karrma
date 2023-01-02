@@ -9,8 +9,8 @@ get_pageviews_raw(
   article = c("Taylor Swift", "Kanye West"),
   platform = "all",
   user_type = "all",
-  start = get_last_month(),
-  end = NULL,
+  start = "2015100100",
+  end = "2022120100",
   reformat = TRUE,
   granularity = "monthly"
 )
