@@ -3,8 +3,6 @@
 #' `r lifecycle::badge('experimental')`
 #'
 #' @return tibble
-#' @examples
-#' data <- get_spotify()
 #'
 #' @export
 #' @family spotify
@@ -34,9 +32,6 @@ get_spotify <- function() {
 #'
 #' @return List object.
 #' @family spotify
-#' @examples
-#' data <- get_swift_spotify()
-#' data <- get_west_spotify()
 
 #' @export
 #' @rdname spotify_backend
@@ -55,9 +50,6 @@ get_west_spotify <- function() {
 #'
 #' @return gt table
 #' @export
-#'
-#' @examples
-#' visualize_spotify()
 visualize_spotify <- function() {
   # Setting the variables to NULL first
   . <- NULL
