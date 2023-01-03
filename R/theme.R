@@ -1,36 +1,15 @@
-#' Visualize Spotify data for Taylor Swift and Kanye West
+#' Apply spotify theme to a `gt` table
 #'
 #' `r lifecycle::badge('experimental')`
 #'
+#' @param gt_object gt table object
+#' @param ... Optional arguments
+#'
 #' @return gt table
 #' @export
-visualize_spotify <- function() {
-  # Setting the variables to NULL first
-  . <- NULL
-  everything <- NULL
-  followers <- NULL
-  like <- NULL
-  popularity <- NULL
+theme_spotify <- function(gt_object, ...) {
 
-  data <- get_spotify()
-
-  data$like <- "heart"
-
-  gt::gt(data) %>%
-    gt::tab_header(.,
-                   title = "Taylor Swift and Kanye West on Spotify") %>%
-    # Relabel columns
-    gt::cols_label(
-      like = ""
-    ) %>%
-    # gt::tab_footnote(footnote = "Nov. 14 to 21, 2022.",
-    #              locations = gt::cells_column_labels(columns = views)) %>%
-    # gt::tab_footnote(footnote = "In bytes.",
-    #              locations = gt::cells_column_labels(columns = length)) %>%
-    gt::tab_source_note(., "Code: github.com/judith-bourque") %>%
-    # Add space in numbers
-    gt::fmt_number(followers, sep_mark = ",", decimals = 0) %>%
-    gt::fmt_number(popularity, sep_mark = ",", decimals = 0) %>%
+  gt_object %>%
     # Customized version of gtExtras::gt_theme_dark()
     gt::tab_options(
       heading.align = "left",
@@ -47,7 +26,8 @@ visualize_spotify <- function() {
       column_labels.background.color = "#2d2d2d",
       column_labels.border.bottom.width = 3,
       column_labels.border.bottom.color = "#2d2d2d",
-      data_row.padding = gt::px(7)
+      data_row.padding = gt::px(7),
+      ...
     ) %>%
     gt::tab_style(
       style = gt::cell_text(
@@ -71,13 +51,9 @@ visualize_spotify <- function() {
       gt::cell_borders(color = "#2d2d2d")
     ),
     locations = gt::cells_body()) %>%
-    gtExtras::gt_fa_column(like,
-                           prefer_type = "solid",
-                           palette = "lightgreen",
-                           align = "center") %>%
     # Add padding
     gt::opt_horizontal_padding(scale = 3) %>%
     gt::opt_vertical_padding(scale = 1.5) %>%
-    gt::opt_table_outline(., style = "none", width = gt::px(0))
+    gt::opt_table_outline(style = "none", width = gt::px(0))
 
 }
