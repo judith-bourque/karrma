@@ -2,6 +2,8 @@
 #'
 #' `r lifecycle::badge('experimental')`
 #'
+#' Based on `gtExtras::gt_theme_dark()`.
+#'
 #' @param gt_object gt table object
 #' @param ... Optional arguments
 #'
@@ -10,7 +12,6 @@
 theme_spotify <- function(gt_object, ...) {
 
   gt_object %>%
-    # Customized version of gtExtras::gt_theme_dark()
     gt::tab_options(
       heading.align = "left",
       heading.border.bottom.style = "none",

@@ -17,3 +17,6 @@ gt table
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }
+\details{
+Based on \code{gtExtras::gt_theme_dark()}.
+}
