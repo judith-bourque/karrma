@@ -10,6 +10,7 @@
 #' @return gt table
 #' @export
 theme_spotify <- function(gt_object, ...) {
+  stopifnot("'gt_object' must be a 'gt_tbl'." = "gt_tbl" %in% class(gt_object))
 
   gt_object %>%
     gt::tab_options(
