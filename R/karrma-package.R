@@ -12,5 +12,6 @@
 #' @importFrom spotifyr get_artist
 #' @importFrom spotifyr get_spotify_access_token
 #' @importFrom tibble tibble
+#' @importFrom tidyselect everything
 ## usethis namespace: end
 NULL
