@@ -12,10 +12,6 @@ tibble
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }
-\examples{
-data <- get_spotify()
-
-}
 \seealso{
 Other spotify: 
 \code{\link{get_swift_spotify}()}

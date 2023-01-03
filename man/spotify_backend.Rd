@@ -18,10 +18,6 @@ List object.
 \details{
 Functions intented for backend only.
 }
-\examples{
-data <- get_swift_spotify()
-data <- get_west_spotify()
-}
 \seealso{
 Other spotify: 
 \code{\link{get_spotify}()}
