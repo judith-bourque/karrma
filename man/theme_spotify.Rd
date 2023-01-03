@@ -20,3 +20,12 @@ gt table
 \details{
 Based on \code{gtExtras::gt_theme_dark()}.
 }
+\examples{
+
+library("gt")
+
+spotify_tb <- head(mtcars) \%>\%
+  gt() \%>\%
+  theme_spotify() \%>\%
+  tab_header(title = "Spotify theme table")
+}

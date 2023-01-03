@@ -6,9 +6,16 @@
 #'
 #' @param gt_object gt table object
 #' @param ... Optional arguments
-#'
 #' @return gt table
 #' @export
+#' @examples
+#'
+#' library("gt")
+#'
+#' spotify_tb <- head(mtcars) %>%
+#'   gt() %>%
+#'   theme_spotify() %>%
+#'   tab_header(title = "Spotify theme table")
 theme_spotify <- function(gt_object, ...) {
   stopifnot("'gt_object' must be a 'gt_tbl'." = "gt_tbl" %in% class(gt_object))
 
