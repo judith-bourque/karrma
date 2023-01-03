@@ -21,11 +21,28 @@ gt table
 Based on \code{gtExtras::gt_theme_dark()}.
 }
 \examples{
-
 library("gt")
+library("dplyr")
 
-spotify_tb <- head(mtcars) \%>\%
+# Basic example
+head(mtcars) \%>\%
   gt() \%>\%
   theme_spotify() \%>\%
   tab_header(title = "Spotify theme table")
+
+# With green hearts
+data <- head(mtcars) \%>\%
+  mutate(like = "heart")
+
+data \%>\%
+  gt() \%>\%
+  tab_header(title = "Spotify theme table") \%>\%
+  gt::cols_label(
+  like = ""
+  ) \%>\%
+  theme_spotify() \%>\%
+  gtExtras::gt_fa_column(like,
+  prefer_type = "solid",
+  palette = "lightgreen",
+  align = "center")
 }
