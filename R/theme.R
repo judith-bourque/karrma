@@ -36,7 +36,7 @@ theme_spotify <- function(gt_object, ...) {
         font = gt::google_font("Source Sans Pro"),
         transform = "uppercase"
       ),
-      locations = gt::cells_column_labels(everything())
+      locations = gt::cells_column_labels(tidyselect::everything())
     ) %>%
     gt::tab_style(
       style = gt::cell_text(
