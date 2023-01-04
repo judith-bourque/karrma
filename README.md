@@ -54,18 +54,26 @@ SPOTIFY_CLIENT_SECRET = "xxxxxxxxxxxxxxxxxxxxx"
 
 ## Examples
 
-### Compare Spotify data
+### Apply Spotify theme to a gt object
 
 ``` r
-get_spotify()
-#> # A tibble: 2 × 3
-#>   name         followers popularity
-#>   <chr>            <int>      <int>
-#> 1 Taylor Swift  65139572         99
-#> 2 Kanye West    19029813         91
+library("gt")
 
-visualize_spotify() %>% 
-  gt::gtsave("man/figures/visualize_spotify.png", expand = 10)
+data <- head(mtcars) %>%
+  mutate(like = "heart")
+
+data %>%
+  gt() %>%
+  tab_header(title = "Spotify theme table") %>%
+  cols_label(
+  like = ""
+  ) %>%
+  theme_spotify() %>%
+  gtExtras::gt_fa_column(like,
+  prefer_type = "solid",
+  palette = "lightgreen",
+  align = "center") %>% 
+  gtsave("man/figures/visualize_spotify.png", expand = 10)
 ```
 
 ![alt text here](man/figures/visualize_spotify.png)
