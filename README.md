@@ -25,6 +25,14 @@ devtools::install_github("judith-bourque/karrma")
 
 ``` r
 library("karrma")
+```
+
+## Examples
+
+### Apply Spotify theme to a gt object
+
+``` r
+library("gt")
 library("dplyr")
 #> 
 #> Attaching package: 'dplyr'
@@ -34,38 +42,22 @@ library("dplyr")
 #> The following objects are masked from 'package:base':
 #> 
 #>     intersect, setdiff, setequal, union
-```
 
-## Prerequisites
+data <- head(mtcars) %>%
+  mutate(like = "heart")
 
-``` r
-install.packages("spotifyr")
-```
-
-Setup Spotify API access token in Renviron:
-
-``` r
-usethis::edit_r_environ()
-
-# Insert in Renviron
-SPOTIFY_CLIENT_ID = "xxxxxxxxxxxxxxxxxxxxx"
-SPOTIFY_CLIENT_SECRET = "xxxxxxxxxxxxxxxxxxxxx"
-```
-
-## Examples
-
-### Compare Spotify data
-
-``` r
-get_spotify()
-#> # A tibble: 2 × 3
-#>   name         followers popularity
-#>   <chr>            <int>      <int>
-#> 1 Taylor Swift  65139572         99
-#> 2 Kanye West    19029813         91
-
-visualize_spotify() %>% 
-  gt::gtsave("man/figures/visualize_spotify.png", expand = 10)
+data %>%
+  gt() %>%
+  tab_header(title = "Spotify theme table") %>%
+  cols_label(
+  like = ""
+  ) %>%
+  theme_spotify() %>%
+  gtExtras::gt_fa_column(like,
+  prefer_type = "solid",
+  palette = "lightgreen",
+  align = "center") %>% 
+  gtsave("man/figures/visualize_spotify.png", expand = 10)
 ```
 
 ![alt text here](man/figures/visualize_spotify.png)
@@ -93,4 +85,4 @@ get_pageviews_raw(granularity = "monthly") %>%
 visualize_pageviews()
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />

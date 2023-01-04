@@ -16,7 +16,6 @@ Imports:
     lubridate,
     pageviews,
     scales,
-    spotifyr,
     tibble,
     tidyselect
 Suggests: 
