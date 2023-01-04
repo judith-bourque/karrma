@@ -33,23 +33,6 @@ devtools::install_github("judith-bourque/karrma")
 
 ```{r}
 library("karrma")
-library("dplyr")
-```
-
-## Prerequisites
-
-```{r eval = FALSE}
-install.packages("spotifyr")
-```
-
-Setup Spotify API access token in Renviron:
-
-```{r eval = FALSE}
-usethis::edit_r_environ()
-
-# Insert in Renviron
-SPOTIFY_CLIENT_ID = "xxxxxxxxxxxxxxxxxxxxx"
-SPOTIFY_CLIENT_SECRET = "xxxxxxxxxxxxxxxxxxxxx"
 ```
 
 ## Examples
@@ -58,6 +41,7 @@ SPOTIFY_CLIENT_SECRET = "xxxxxxxxxxxxxxxxxxxxx"
 
 ```{r}
 library("gt")
+library("dplyr")
 
 data <- head(mtcars) %>%
   mutate(like = "heart")

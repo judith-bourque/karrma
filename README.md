@@ -25,6 +25,14 @@ devtools::install_github("judith-bourque/karrma")
 
 ``` r
 library("karrma")
+```
+
+## Examples
+
+### Apply Spotify theme to a gt object
+
+``` r
+library("gt")
 library("dplyr")
 #> 
 #> Attaching package: 'dplyr'
@@ -34,30 +42,6 @@ library("dplyr")
 #> The following objects are masked from 'package:base':
 #> 
 #>     intersect, setdiff, setequal, union
-```
-
-## Prerequisites
-
-``` r
-install.packages("spotifyr")
-```
-
-Setup Spotify API access token in Renviron:
-
-``` r
-usethis::edit_r_environ()
-
-# Insert in Renviron
-SPOTIFY_CLIENT_ID = "xxxxxxxxxxxxxxxxxxxxx"
-SPOTIFY_CLIENT_SECRET = "xxxxxxxxxxxxxxxxxxxxx"
-```
-
-## Examples
-
-### Apply Spotify theme to a gt object
-
-``` r
-library("gt")
 
 data <- head(mtcars) %>%
   mutate(like = "heart")
@@ -101,4 +85,4 @@ get_pageviews_raw(granularity = "monthly") %>%
 visualize_pageviews()
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
