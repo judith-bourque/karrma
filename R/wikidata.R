@@ -19,7 +19,13 @@ get_qid <- function(){
 
 #' Get information on artists
 #'
+#' @description
 #' `r lifecycle::badge('experimental')`
+#'
+#' `get_awards()` returns the number of awards received per person.
+#' `get_net_worth()` returns the net worth per person.
+#' `get_nominations(id = get_qid())` returns the number of nominations per person.
+#' `get_bio` returns all data in a single tibble.
 #'
 #' @param id QID
 #'
@@ -27,8 +33,8 @@ get_qid <- function(){
 #'
 #' @examples
 #' # Get specific information
-#' get_net_worth(id = get_qid())
 #' get_awards(id = get_qid())
+#' get_net_worth(id = get_qid())
 #' get_nominations(id = get_qid())
 #'
 #' # Get consolidated information

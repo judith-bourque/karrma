@@ -23,11 +23,16 @@ Tibble.
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+
+\code{get_awards()} returns the number of awards received per person.
+\code{get_net_worth()} returns the net worth per person.
+\code{get_nominations(id = get_qid())} returns the number of nominations per person.
+\code{get_bio} returns all data in a single tibble.
 }
 \examples{
 # Get specific information
-get_net_worth(id = get_qid())
 get_awards(id = get_qid())
+get_net_worth(id = get_qid())
 get_nominations(id = get_qid())
 
 # Get consolidated information
