@@ -3,6 +3,7 @@
 export(get_awards)
 export(get_last_month)
 export(get_net_worth)
+export(get_nominations)
 export(get_pageviews_raw)
 export(get_qid)
 export(theme_spotify)
