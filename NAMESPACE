@@ -2,6 +2,7 @@
 
 export(get_last_month)
 export(get_pageviews_raw)
+export(get_qid)
 export(theme_spotify)
 export(visualize_pageviews)
 importFrom(dplyr,"%>%")
