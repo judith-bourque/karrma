@@ -62,6 +62,33 @@ data %>%
 
 ![alt text here](man/figures/visualize_spotify.png)
 
+### Compare Wikidata data
+
+``` r
+library("gt")
+library("dplyr")
+
+data <- get_bio(id = get_qid()) %>% 
+  mutate(like = "heart")
+#> Joining, by = "label"
+#> Joining, by = "label"
+
+data %>%
+  gt() %>%
+  tab_header(title = "Wikidata data") %>%
+  cols_label(
+  like = ""
+  ) %>%
+  theme_spotify() %>%
+  gtExtras::gt_fa_column(like,
+  prefer_type = "solid",
+  palette = "lightgreen",
+  align = "center") %>% 
+  gtsave("man/figures/visualize_bio.png", expand = 10)
+```
+
+![alt text here](man/figures/visualize_bio.png)
+
 ### Compare Wikipedia data
 
 ``` r
@@ -85,4 +112,4 @@ get_pageviews_raw(granularity = "monthly") %>%
 visualize_pageviews()
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
