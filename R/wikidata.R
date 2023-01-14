@@ -6,6 +6,7 @@
 #'
 #' @return Character vector of QID
 #' @export
+#' @keywords internal
 #'
 #' @examples
 #' get_qid()
@@ -16,17 +17,31 @@ get_qid <- function(){
   qid
 }
 
-#' Get net worth of artists
+#' Get information on artists
 #'
+#' @description
 #' `r lifecycle::badge('experimental')`
+#'
+#' `get_awards()` returns the number of awards received per person.
+#' `get_net_worth()` returns the net worth per person.
+#' `get_nominations(id = get_qid())` returns the number of nominations per person.
+#' `get_bio` returns all data in a single tibble.
 #'
 #' @param id QID
 #'
 #' @return Tibble.
-#' @export
 #'
 #' @examples
+#' # Get specific information
+#' get_awards(id = get_qid())
 #' get_net_worth(id = get_qid())
+#' get_nominations(id = get_qid())
+#'
+#' # Get consolidated information
+#' get_bio(id = get_qid())
+
+#' @rdname get_data
+#' @export
 get_net_worth <- function(id){
   value <- NULL # To mute note on check()
 
@@ -37,17 +52,8 @@ get_net_worth <- function(id){
   )
 }
 
-#' Get number of awards per artist
-#'
-#' `r lifecycle::badge('experimental')`
-#'
-#' @param id Wikidata QID of artist
-#'
-#' @return Tibble.
+#' @rdname get_data
 #' @export
-#'
-#' @examples
-#' get_awards(id = get_qid())
 get_awards <- function(id) {
   awards <- tidywikidatar::tw_get_property(id = id, p = "P166")
 
@@ -60,17 +66,8 @@ get_awards <- function(id) {
   )
 }
 
-#' Get number of nominations per artist
-#'
-#' `r lifecycle::badge('experimental')`
-#'
-#' @param id Wikidata QID of artist
-#'
-#' @return Tibble.
+#' @rdname get_data
 #' @export
-#'
-#' @examples
-#' get_nominations(id = get_qid())
 get_nominations <- function(id) {
   nominations <- tidywikidatar::tw_get_property(id = id, p = "P1411")
 
@@ -83,15 +80,8 @@ get_nominations <- function(id) {
   )
 }
 
-#' Get biography data for artists
-#'
-#' @param id QID
-#'
-#' @return tibble
+#' @rdname get_data
 #' @export
-#'
-#' @examples
-#' get_bio(id = get_qid())
 get_bio <- function(id) {
   nominations <- get_nominations(id)
   awards <- get_awards(id)
