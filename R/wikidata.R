@@ -6,6 +6,7 @@
 #'
 #' @return Character vector of QID
 #' @export
+#' @keywords internal
 #'
 #' @examples
 #' get_qid()
