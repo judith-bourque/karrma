@@ -26,9 +26,13 @@ get_qid <- function(){
 #' @return Tibble.
 #'
 #' @examples
+#' # Get specific information
 #' get_net_worth(id = get_qid())
 #' get_awards(id = get_qid())
 #' get_nominations(id = get_qid())
+#'
+#' # Get consolidated information
+#' get_bio(id = get_qid())
 
 #' @rdname get_data
 #' @export
@@ -70,15 +74,8 @@ get_nominations <- function(id) {
   )
 }
 
-#' Get biography data for artists
-#'
-#' @param id QID
-#'
-#' @return tibble
+#' @rdname get_data
 #' @export
-#'
-#' @examples
-#' get_bio(id = get_qid())
 get_bio <- function(id) {
   nominations <- get_nominations(id)
   awards <- get_awards(id)

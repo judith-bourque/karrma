@@ -4,6 +4,7 @@
 \alias{get_net_worth}
 \alias{get_awards}
 \alias{get_nominations}
+\alias{get_bio}
 \title{Get information on artists}
 \usage{
 get_net_worth(id)
@@ -11,6 +12,8 @@ get_net_worth(id)
 get_awards(id)
 
 get_nominations(id)
+
+get_bio(id)
 }
 \arguments{
 \item{id}{QID}
@@ -22,7 +25,11 @@ Tibble.
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }
 \examples{
+# Get specific information
 get_net_worth(id = get_qid())
 get_awards(id = get_qid())
 get_nominations(id = get_qid())
+
+# Get consolidated information
+get_bio(id = get_qid())
 }
