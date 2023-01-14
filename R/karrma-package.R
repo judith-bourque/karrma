@@ -11,5 +11,6 @@
 #' @importFrom scales comma
 #' @importFrom tibble tibble
 #' @importFrom tidyselect everything
+#' @importFrom tidywikidatar tw_get_label
 ## usethis namespace: end
 NULL

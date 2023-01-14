@@ -17,7 +17,8 @@ Imports:
     pageviews,
     scales,
     tibble,
-    tidyselect
+    tidyselect,
+    tidywikidatar
 Suggests: 
     ggplot2,
     gt,
