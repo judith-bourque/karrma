@@ -13,3 +13,23 @@ get_qid <- function(){
            )
   qid
 }
+
+#' Get statistics for artists
+#'
+#' @param id QID
+#' @param language Wikipedia project language
+#'
+#' @return Tibble.
+#' @export
+#'
+#' @examples
+#' get_stats(id = get_qid())
+get_stats <- function(id, language = "en"){
+  value <- NULL # To mute note on check()
+
+  tibble::tibble(
+    label = tidywikidatar::tw_get_label(id = id),
+    net_worth = tidywikidatar::tw_get_property(id = id, p = "P2218") %>%
+      dplyr::pull(value)
+  )
+}
