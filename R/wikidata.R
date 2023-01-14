@@ -59,3 +59,27 @@ get_awards <- function(id) {
     awards = awards_count$n
   )
 }
+
+#' Get number of nominations per artist
+#'
+#' `r lifecycle::badge('experimental')`
+#'
+#' @param id Wikidata QID of artist
+#'
+#' @return Tibble.
+#' @export
+#'
+#' @examples
+#' get_nominations(id = get_qid())
+get_nominations <- function(id) {
+  nominations <- tidywikidatar::tw_get_property(id = id, p = "P1411")
+
+  nominations_count <- nominations %>%
+    dplyr::count(id)
+
+  tibble::tibble(
+    label = tidywikidatar::tw_get_label(id = id),
+    awards = nominations_count$n
+  )
+}
+
