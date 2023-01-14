@@ -1,5 +1,7 @@
 #' Get QID for artists
 #'
+#' `r lifecycle::badge('experimental')`
+#'
 #' For internal purposes.
 #'
 #' @return Character vector of QID
@@ -14,17 +16,18 @@ get_qid <- function(){
   qid
 }
 
-#' Get statistics for artists
+#' Get net worth of artists
+#'
+#' `r lifecycle::badge('experimental')`
 #'
 #' @param id QID
-#' @param language Wikipedia project language
 #'
 #' @return Tibble.
 #' @export
 #'
 #' @examples
-#' get_stats(id = get_qid())
-get_stats <- function(id, language = "en"){
+#' get_net_worth(id = get_qid())
+get_net_worth <- function(id){
   value <- NULL # To mute note on check()
 
   tibble::tibble(
