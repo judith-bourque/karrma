@@ -2,9 +2,15 @@
 % Please edit documentation in R/wikidata.R
 \name{get_net_worth}
 \alias{get_net_worth}
-\title{Get net worth of artists}
+\alias{get_awards}
+\alias{get_nominations}
+\title{Get information on artists}
 \usage{
 get_net_worth(id)
+
+get_awards(id)
+
+get_nominations(id)
 }
 \arguments{
 \item{id}{QID}
@@ -17,4 +23,6 @@ Tibble.
 }
 \examples{
 get_net_worth(id = get_qid())
+get_awards(id = get_qid())
+get_nominations(id = get_qid())
 }
