@@ -79,7 +79,25 @@ get_nominations <- function(id) {
 
   tibble::tibble(
     label = tidywikidatar::tw_get_label(id = id),
-    awards = nominations_count$n
+    nominations = nominations_count$n
   )
+}
+
+#' Get biography data for artists
+#'
+#' @param id QID
+#'
+#' @return tibble
+#' @export
+#'
+#' @examples
+#' get_bio(id = get_qid())
+get_bio <- function(id) {
+  nominations <- get_nominations(id)
+  awards <- get_awards(id)
+  net_worth <- get_net_worth(id)
+
+  dplyr::full_join(nominations, awards) %>%
+    dplyr::full_join(net_worth)
 }
 
